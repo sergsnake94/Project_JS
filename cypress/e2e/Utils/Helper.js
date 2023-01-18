@@ -33,3 +33,70 @@ export const intersection = (setA, setB) => {
     }
     return _intersection;
 }
+
+export const AddNewSystem = (planets) => {
+    const arrayAfter = planets.map((el) => el.solarSystem = true);
+
+    for (let el of arrayAfter) {
+        console.log(el)
+    }
+    planets.forEach(solarSystem => {
+        cy.log(JSON.stringify(solarSystem));
+    })
+
+}
+
+export const AddNewObj = (planets, newObj) => {
+    planets.push(newObj)
+    planets.forEach(planet => {
+        cy.log(JSON.stringify(planet));
+    })
+
+}
+
+export const SumRadius = (planets) => {
+    let newValues = planets.reduce((total, values) => {
+        return total + values.radius
+    }, 0)
+    console.log(newValues)
+}
+
+export const PlanetDistanse = (planets) => {
+    let newPlanets = [];
+    for (let i = 0; i < planets.length; i++) {
+        if (planets[i].distance > 5) {
+            newPlanets.push(planets[i])
+        }
+    }
+    console.log(newPlanets)
+}
+
+export const DeletePlenet = (planets) => {
+    let planetsName = planets.findIndex(item => item.planet == "SomeNewPlanet");
+    console.log(planetsName)
+    planets.splice(8, 1)
+    console.log(planets)
+}
+
+export const PlenetSort = (planets) => {
+    planets.sort(function (a, b) {
+        if (a.radius > b.radius) {
+            return 1;
+        }
+        if (a.radius < b.radius) {
+            return -1;
+        }
+        return 0;
+    })
+    console.log(planets)
+}
+
+export const SortByName = (planets) => {
+
+    function SortArray(x, y) {
+        return x.planet.localeCompare(y.planet);
+    }
+    var sortByName = planets.sort(SortArray);
+    console.log(sortByName);
+    console.log(planets.length)
+}
