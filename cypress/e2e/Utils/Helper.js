@@ -34,7 +34,7 @@ export const intersection = (setA, setB) => {
     return _intersection;
 }
 
-export const AddNewSystem = (planets) => {
+export const addNewSystem = (planets) => {
     const arrayAfter = planets.map((el) => el.solarSystem = true);
 
     for (let el of arrayAfter) {
@@ -46,7 +46,7 @@ export const AddNewSystem = (planets) => {
 
 }
 
-export const AddNewObj = (planets, newObj) => {
+export const addNewObj = (planets, newObj) => {
     planets.push(newObj)
     planets.forEach(planet => {
         cy.log(JSON.stringify(planet));
@@ -54,14 +54,14 @@ export const AddNewObj = (planets, newObj) => {
 
 }
 
-export const SumRadius = (planets) => {
+export const sumRadius = (planets) => {
     let newValues = planets.reduce((total, values) => {
         return total + values.radius
     }, 0)
     console.log(newValues)
 }
 
-export const PlanetDistanse = (planets) => {
+export const planetDistanсe = (planets) => {
     let newPlanets = [];
     for (let i = 0; i < planets.length; i++) {
         if (planets[i].distance > 5) {
@@ -71,14 +71,14 @@ export const PlanetDistanse = (planets) => {
     console.log(newPlanets)
 }
 
-export const DeletePlenet = (planets) => {
+export const deletePlanet = (planets) => {
     let planetsName = planets.findIndex(item => item.planet == "SomeNewPlanet");
     console.log(planetsName)
     planets.splice(8, 1)
     console.log(planets)
 }
 
-export const PlenetSort = (planets) => {
+export const planetSort = (planets) => {
     planets.sort(function (a, b) {
         if (a.radius > b.radius) {
             return 1;
@@ -91,7 +91,7 @@ export const PlenetSort = (planets) => {
     console.log(planets)
 }
 
-export const SortByName = (planets) => {
+export const sortByName = (planets) => {
 
     function SortArray(x, y) {
         return x.planet.localeCompare(y.planet);

@@ -1,4 +1,4 @@
-import { AddNewSystem, AddNewObj, SumRadius, PlanetDistanse, DeletePlenet, PlenetSort, SortByName } from "../Utils/Helper"
+import { addNewSystem, addNewObj, sumRadius, planetDistanсe, deletePlanet, planetSort, sortByName } from "../Utils/Helper"
 describe('Test fors Array', () => {
     it('Array', () => {
 
@@ -14,12 +14,12 @@ describe('Test fors Array', () => {
         ]
         let newObj = { planet: "SomeNewPlanet", radius: 24764, density: 1.64, distance: 30.07, solarSystem: false }
 
-        AddNewSystem(planets);
-        AddNewObj(planets, newObj);
-        SumRadius(planets);
-        PlanetDistanse(planets);
-        DeletePlenet(planets);
-        PlenetSort(planets);
-        SortByName(planets);
+        addNewSystem(planets);
+        addNewObj(planets, newObj);
+        sumRadius(planets);
+        planetDistanсe(planets);
+        deletePlanet(planets);
+        planetSort(planets);
+        sortByName(planets);
     })
 })
