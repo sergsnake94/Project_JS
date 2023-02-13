@@ -175,33 +175,32 @@ export const verifyObject = () => {
     }
 }
 
-export const verifyOld = (ages) => {
-
-    if (chance.age({ type: 'child' }) < 5) {
+export const verifyOld = (age) => {
+    if (age) {
         console.log("Child");
     }
-    else if (chance.age({ type: 'teen' } > 20)) {
+    else if (age) {
         console.log("Teen");
     }
-    else if (chance.age({ type: 'adult' } > 20)) {
+    else if (age) {
         console.log("Adult");
     }
-    else if (chance.age({ type: 'senior' } > 30)) {
+    else if (age) {
         console.log("Senior");
     }
 }
 
-export const verifyOldBySwitch = (ages) => {
+export const verifyOldBySwitch = (age) => {
     
-    switch (ages) {
+    switch (age) {
 
-        case ages >= 25 ? console.log("adult") : false:
+        case age >= 25 ? console.log("adult") : false:
             break;
-        case ages >= 30 ? console.log("senior") : false:
+        case age >= 30 ? console.log("senior") : false:
             break;
-        case ages <= 5 ? console.log("child") : false:
+        case age <= 5 ? console.log("child") : false:
             break;
-        case ages = 17 ? console.log("teen") : false:
+        case age = 17 ? console.log("teen") : false:
             break;
     }
 }

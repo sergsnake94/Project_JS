@@ -20,7 +20,7 @@ describe('Test fors Array', () => {
 		const neValues = new Set();
 		neValues.add("Mercury");
 		neValues.add("Not Mercury");
-		let ages = chance.age()
+		let age = chance.age()
 
 		sortByKeys(newMap);
 		sortByValues(newMap);
@@ -34,8 +34,8 @@ describe('Test fors Array', () => {
 		mergeMapObjects(newMap);
 		merdgeTwoMap(newMap);
 		verifyObject(planet);
-		verifyOld(ages);
-		verifyOldBySwitch(ages);
+		verifyOld(age);
+		verifyOldBySwitch(age);
 
 	})
 })
