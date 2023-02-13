@@ -1,5 +1,5 @@
 const { Chance } = require("chance")
-import { sortByKeys,sortByValues,verifyExistingPlanet,getAllPlanet,getInfoPlanet,getSizePlanet,verifySetPlanet,getNewSetValues,deleteAndVerifyPlanet,mergeMapObjects,merdgeTwoMap,verifyObject,verifyOld,verifyOldBySwitch } from "../Utils/Helper" 
+import { sortByKeys, sortByValues, verifyExistingPlanet, getAllPlanet, getInfoPlanet, getSizePlanet, verifySetPlanet, getNewSetValues, deleteAndVerifyPlanet, mergeMapObjects, merdgeTwoMap, verifyObject, verifyOld, verifyOldBySwitch } from "../Utils/Helper"
 describe('Test fors Array', () => {
 	it('Array', () => {
 
@@ -14,26 +14,28 @@ describe('Test fors Array', () => {
 			newMap.set("Uranus", { radius: 25559, density: 1.27, distance: 19.213 }),
 			newMap.set("Neptune", { radius: 24764, density: 1.64, distance: 30.07 })
 		let somePlanet = "Saturn"
-		
+		let planet = { planet: "Mercury", radius: 2440, density: 5.43, distance: 0.395 }
+
 		const chance = new Chance();
 		const neValues = new Set();
-neValues.add("Mercury");
-neValues.add("Not Mercury");
+		neValues.add("Mercury");
+		neValues.add("Not Mercury");
+		let ages = chance.age()
 
-sortByKeys();
-sortByValues();
-verifyExistingPlanet();
-getAllPlanet();
-getInfoPlanet();
-getSizePlanet();
-getNewSetValues();
-verifySetPlanet();
-deleteAndVerifyPlanet();
-mergeMapObjects();
-merdgeTwoMap();
-verifyObject();
-verifyOld();
-verifyOldBySwitch();
+		sortByKeys(newMap);
+		sortByValues(newMap);
+		verifyExistingPlanet(newMap, somePlanet);
+		getAllPlanet(newMap);
+		getInfoPlanet(newMap, somePlanet);
+		getSizePlanet(newMap);
+		getNewSetValues(neValues);
+		verifySetPlanet(neValues);
+		deleteAndVerifyPlanet(newMap);
+		mergeMapObjects(newMap);
+		merdgeTwoMap(newMap);
+		verifyObject(planet);
+		verifyOld(ages);
+		verifyOldBySwitch(ages);
 
 	})
 })
