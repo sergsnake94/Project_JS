@@ -1,3 +1,5 @@
+const { Chance } = require("chance")
+const chance = new Chance();
 
 export const isSuperSet = (set, subset) => {
     for (var elem of subset) {
@@ -99,4 +101,106 @@ export const sortByName = (planets) => {
     var sortByName = planets.sort(SortArray);
     console.log(sortByName);
     console.log(planets.length)
+}
+
+export const sortByKeys = (newMap) => {
+    for (let item of newMap.keys()) {
+        console.log(item);
+    }
+}
+
+export const sortByValues = (newMap) => {
+    for (let item of newMap.values()) {
+        console.log(item);
+    }
+}
+
+export const verifyExistingPlanet = (newMap, somePlanet) => {
+    console.log(newMap.has(somePlanet))
+}
+
+export const getAllPlanet = (newMap) => {
+    console.log(newMap)
+}
+
+export const getInfoPlanet = (newMap, somePlanet) => {
+    console.log(newMap.get(somePlanet))
+}
+
+export const getSizePlanet = (newMap) => {
+    console.log(newMap.size)
+}
+
+export const getNewSetValues = (neValues) => {
+    console.log(neValues)
+}
+
+export const verifySetPlanet = (neValues) => {
+    console.log(neValues.has("Not Mercury"))
+}
+
+export const deleteAndVerifyPlanet = (newMap) => {
+    newMap.delete("Uranus");
+    console.log(newMap.has("Uranus"))
+}
+
+export function mergeMapObjects(...maps) {
+
+    const map = new Map();
+
+    for (const m of maps) {
+        for (const item of m) {
+            map.set(...item);
+        }
+    }
+
+    return map;
+}
+
+export const merdgeTwoMap = (newMap) => {
+    const mapOne = new Map();
+
+    mapOne.set("Pluto", { radius: 2677, density: 8.43, distance: 0.800 })
+    let MapTwo = mergeMapObjects(mapOne, newMap)
+
+    console.log(MapTwo);
+}
+
+export const verifyObject = () => {
+    let planet = { planet: "Mercury", radius: 2440, density: 5.43, distance: 0.395 }
+
+    for (let element in planet) {
+        alert(element);
+        alert(planet[element])
+    }
+}
+
+export const verifyOld = (age) => {
+    if (age) {
+        console.log("Child");
+    }
+    else if (age) {
+        console.log("Teen");
+    }
+    else if (age) {
+        console.log("Adult");
+    }
+    else if (age) {
+        console.log("Senior");
+    }
+}
+
+export const verifyOldBySwitch = (age) => {
+    
+    switch (age) {
+
+        case age >= 25 ? console.log("adult") : false:
+            break;
+        case age >= 30 ? console.log("senior") : false:
+            break;
+        case age <= 5 ? console.log("child") : false:
+            break;
+        case age = 17 ? console.log("teen") : false:
+            break;
+    }
 }
